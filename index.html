@@ -1,23 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kannada Word Percentage Checker</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>PackMaster - Karnataka Manufacturing Integration</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Kannada Word Percentage Checker</h1>
-        <input type="file" id="imageInput" accept="image/*" />
-        <button onclick="processImage()">Check Percentage</button>
-        <canvas id="outputCanvas" width="400" height="400"></canvas>
-        <p id="result"></p>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <div className="min-h-screen bg-gray-100">
+                    <header className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 shadow-lg">
+                        <div className="container mx-auto flex justify-between items-center">
+                            <h1 className="text-3xl font-bold">PackMaster</h1>
+                            <nav>
+                                <ul className="flex space-x-6">
+                                    <li><a href="#home" className="hover:underline">Home</a></li>
+                                    <li><a href="#features" className="hover:underline">Features</a></li>
+                                    <li><a href="#about" className="hover:underline">About Us</a></li>
+                                    <li><a href="#contact" className="hover:underline">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
 
+                    <section id="home" className="bg-white py-20">
+                        <div className="container mx-auto text-center">
+                            <h2 className="text-5xl font-bold mb-4">Welcome to PackMaster</h2>
+                            <p className="text-xl mb-8">Your ultimate solution for packaging checks integrated with manufacturing across Karnataka.</p>
+                            <img src="https://placehold.co/600x400" alt="Illustration of a packaging checker app integrated with manufacturing processes" className="mx-auto mb-8 rounded-lg shadow-lg"/>
+                            <a href="#features" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition duration-300">Learn More</a>
+                        </div>
+                    </section>
+
+                    <section id="features" className="bg-gray-200 py-20">
+                        <div className="container mx-auto text-center">
+                            <h2 className="text-4xl font-bold mb-8">Features</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                                    <i className="fas fa-check-circle text-blue-600 text-5xl mb-4"></i>
+                                    <h3 className="text-2xl font-bold mb-2">Accurate Checks</h3>
+                                    <p>Ensure your packaging meets all standards with our accurate checking algorithms.</p>
+                                </div>
+                                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                                    <i className="fas fa-sync-alt text-blue-600 text-5xl mb-4"></i>
+                                    <h3 className="text-2xl font-bold mb-2">Seamless Integration</h3>
+                                    <p>Integrate effortlessly with your existing manufacturing processes.</p>
+                                </div>
+                                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                                    <i className="fas fa-chart-line text-blue-600 text-5xl mb-4"></i>
+                                    <h3 className="text-2xl font-bold mb-2">Real-time Analytics</h3>
+                                    <p>Get real-time insights and analytics to improve your packaging efficiency.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="about" className="bg-white py-20">
+                        <div className="container mx-auto text-center">
+                            <h2 className="text-4xl font-bold mb-8">About Us</h2>
+                            <p className="text-xl mb-8">PackMaster is dedicated to providing top-notch packaging solutions integrated with manufacturing processes across Karnataka. Our mission is to ensure that every package meets the highest standards of quality and efficiency.</p>
+                            <img src="https://placehold.co/600x400" alt="Team of professionals working on packaging solutions" className="mx-auto rounded-lg shadow-lg"/>
+                        </div>
+                    </section>
+
+                    <section id="contact" className="bg-gray-200 py-20">
+                        <div className="container mx-auto text-center">
+                            <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
+                            <p className="text-xl mb-8">Have questions or need support? Reach out to us!</p>
+                            <form className="max-w-lg mx-auto">
+                                <div className="mb-4">
+                                    <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-lg"/>
+                                </div>
+                                <div className="mb-4">
+                                    <input type="email" placeholder="Your Email" className="w-full p-3 border border-gray-300 rounded-lg"/>
+                                </div>
+                                <div className="mb-4">
+                                    <textarea placeholder="Your Message" className="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+                                </div>
+                                <button type="submit" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition duration-300">Send Message</button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <footer className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4">
+                        <div className="container mx-auto text-center">
+                            <p>&copy; 2023 PackMaster. All rights reserved.</p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
 </body>
 </html>
